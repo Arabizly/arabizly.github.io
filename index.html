@@ -3,22 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Pages Site</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; background: #f4f4f4; }
-        h1 { color: #333; }
-        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; }
-    </style>
+    <title>Speech Recognition and Transliteration of Code-Switched English and Arabic</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to My Site</h1>
-        <p>This is a placeholder page hosted on GitHub Pages. Edit this file to customize your content.</p>
-        <ul>
-            <li>Add your projects or links here.</li>
-            <li>Include CSS/JS files for advanced styling.</li>
-            <li>Test by committing and pushing changes.</li>
-        </ul>
-    </div>
+    <header>
+        <h1>Speech Recognition and Transliteration<br>of Code-Switched English and Arabic</h1>
+        <div class="authors">
+            <p>Aly Elaswad (900225517) & Yasmina Mahdy (900221083)</p>
+            <p>CSCE 4604 - Advanced Machine Learning<br>Fall 2025 • Dr. Moustafa Youssef</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="problem">
+            <h2>Problem Statement</h2>
+            <p>Develop an end-to-end system for code-switched Egyptian Arabic-English speech that transcribes to mixed text then converts Arabic portions to Arabizi (Franco-Arab Latin script). Targets daily conversational code-switching common in youth texting.</p> [file:30]
+        </section>
+
+        <section id="pipeline">
+            <h2>Proposed Pipeline</h2>
+            <div class="pipeline">
+                <div class="stage">Speech Input → <strong>Whisper ASR</strong> → Code-Switched Text</div>
+                <div class="stage">Code-Switched Text → <strong>NileChat</strong> → Arabizi Output</div>
+            </div>
+            <p>Example: "I acquired a lot of knowledge ya3ny 3an el networks" [file:30]</p>
+        </section>
+
+        <section id="datasets">
+            <h2>Datasets</h2>
+            <ul>
+                <li><strong>ArzEn-ST</strong>: 12h code-switched Egyptian Arabic-English speech (6,216 utterances) [file:30]</li>
+                <li><strong>EgyptianBench</strong>: 2K paired Arabic-Arabizi rows [file:30]</li>
+                <li><strong>EgyptianHellaSwag</strong>: 40K parallel Arabic-Arabizi text pairs [file:30]</li>
+            </ul>
+        </section>
+
+        <section id="metrics">
+            <h2>Evaluation Metrics</h2>
+            <table>
+                <thead>
+                    <tr><th>Stage</th><th>Primary Metric</th><th>Secondary</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>ASR</td><td>WER</td><td>chrF</td></tr>
+                    <tr><td>Transliteration</td><td>chrF</td><td>CER, TER, WER</td></tr>
+                </tbody>
+            </table> [file:30]
+        </section>
+
+        <section id="updates">
+            <h2>Proposed Updates</h2>
+            <ul>
+                <li>Data extraction/labeling from scattered sources</li>
+                <li>Pipeline cascading with English word preservation</li>
+                <li>NileChat compression (pruning/distillation)</li>
+                <li>ASR fine-tuning (time permitting) [file:30]</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p><a href="Proposal.docx.pdf" download>Download Full Proposal</a> | GitHub Pages Site</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
